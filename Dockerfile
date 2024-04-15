@@ -34,7 +34,10 @@ COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
 # Install Chromedriver using Webdriver Manager
-RUN pip install webdriver-manager
+RUN webdriver-manager update
+
+# Copy Chromedriver binary to appropriate directory
+RUN cp /root/.wdm/drivers/chromedriver/linux64/91.0.4472.19/chromedriver /usr/bin/
 
 # Set entrypoint to run the script
 CMD ["python3", "voter.py"]
