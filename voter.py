@@ -28,7 +28,7 @@ def mainstart():
         # chrome_options.add_argument(f'user-agent={userAgent}')
 
 
-        driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
+        driver = webdriver.Chrome(chrome_options=chrome_options)
         driver.get('https://www.silive.com/readerschoice/2024/04/vote-now-who-has-the-best-pasta-dish-on-staten-island-best-of-2024.html')
 
 
