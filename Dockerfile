@@ -33,9 +33,6 @@ COPY voter.py /app/
 # Copy the requirements file into the container
 COPY requirements.txt /app/
 
-# Install any dependencies
+# Install any dependencies and run the script
 RUN pip install -r requirements.txt
 CMD ["python3", "voter.py"]
-
-# Command to run the Python script
-CMD ["python", "your_script.py"]
