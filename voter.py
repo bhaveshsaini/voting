@@ -14,8 +14,8 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 def mainstart():
     x = 0
     while True:
-        ua = UserAgent()
-        userAgent = ua.random
+        # ua = UserAgent()
+        # userAgent = ua.random
 
         print("Iteration: " + str(x + 1))
         x += 1
@@ -25,7 +25,7 @@ def mainstart():
         # chrome_options.add_argument("headless")
         chrome_options.add_experimental_option("useAutomationExtension", False)
         chrome_options.add_experimental_option("excludeSwitches",["enable-automation"])
-        chrome_options.add_argument(f'user-agent={userAgent}')
+        # chrome_options.add_argument(f'user-agent={userAgent}')
 
 
         driver = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
