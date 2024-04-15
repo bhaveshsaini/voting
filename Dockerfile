@@ -21,9 +21,6 @@ FROM python:3.9
 # Copy the installed Chrome binary from the builder stage
 COPY --from=builder /usr/bin/google-chrome-stable /usr/bin/google-chrome-stable
 
-# Optionally, set the Chrome binary as the default browser
-# ENV BROWSER /usr/bin/google-chrome-stable
-
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -33,6 +30,11 @@ COPY voter.py /app/
 # Copy the requirements file into the container
 COPY requirements.txt /app/
 
-# Install any dependencies and run the script
+# Install any dependencies
 RUN pip install -r requirements.txt
+
+# Install Chromedriver using Webdriver Manager
+RUN pip install webdriver-manager
+
+# Set entrypoint to run the script
 CMD ["python3", "voter.py"]
