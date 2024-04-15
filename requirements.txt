@@ -1,3 +1,4 @@
 selenium==3.141.0
 fake-useragent==0.1.11
 webdriver-manager==3.4.2
+chromedriver-autoinstaller==0.2.2
